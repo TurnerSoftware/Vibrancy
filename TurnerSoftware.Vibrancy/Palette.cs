@@ -2,8 +2,6 @@
 using SixLabors.ImageSharp.ColorSpaces;
 using SixLabors.ImageSharp.ColorSpaces.Conversion;
 using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors.Quantization;
 
 namespace TurnerSoftware.Vibrancy
 {
@@ -152,7 +150,7 @@ namespace TurnerSoftware.Vibrancy
 		{
 			var x = CieLab;
 			var y = other.CieLab;
-
+			
 			var l = y.L - x.L;
 			var a = y.A - x.A;
 			var b = y.B - x.B;
