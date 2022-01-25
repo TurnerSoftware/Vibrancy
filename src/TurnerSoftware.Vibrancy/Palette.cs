@@ -26,9 +26,10 @@ namespace TurnerSoftware.Vibrancy
 
 			for (var y = 0; y < image.Height; y++)
 			{
-				for (var x = 0; x < image.Width; x++)
+				var row = image.GetPixelRowSpan(y);
+				for (var x = 0; x < row.Length; x++)
 				{
-					var color = new SwatchColor(image[x, y]);
+					var color = new SwatchColor(row[x]);
 					foreach (var swatch in swatches)
 					{
 						swatch.TryAddColor(color, Options.MinimumColorDelta);
