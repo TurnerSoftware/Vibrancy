@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.31903.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnerSoftware.Vibrancy", "src\TurnerSoftware.Vibrancy\TurnerSoftware.Vibrancy.csproj", "{1814545A-B0DE-4F12-85F4-6D79B83182D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurnerSoftware.Vibrancy", "src\TurnerSoftware.Vibrancy\TurnerSoftware.Vibrancy.csproj", "{1814545A-B0DE-4F12-85F4-6D79B83182D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "tests\TestProject\TestProject.csproj", "{CB278613-4DF8-40CF-A50B-FD54C4648927}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "tests\TestProject\TestProject.csproj", "{CB278613-4DF8-40CF-A50B-FD54C4648927}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{24FFE351-5046-4464-994B-F737474C6808}"
 EndProject
@@ -13,7 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{22B4A6E4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchmarks", "benchmarks", "{1B9A08D1-7B18-46BA-9121-4F8EE5E32C30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnerSoftware.Vibrancy.Benchmarks", "benchmarks\TurnerSoftware.Vibrancy.Benchmarks\TurnerSoftware.Vibrancy.Benchmarks.csproj", "{6C60FC29-428C-423A-A86C-60C7A75D6497}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurnerSoftware.Vibrancy.Benchmarks", "benchmarks\TurnerSoftware.Vibrancy.Benchmarks\TurnerSoftware.Vibrancy.Benchmarks.csproj", "{6C60FC29-428C-423A-A86C-60C7A75D6497}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{6A9CF979-7179-48D3-A8AC-B82FA0A72AFD}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		License.txt = License.txt
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
