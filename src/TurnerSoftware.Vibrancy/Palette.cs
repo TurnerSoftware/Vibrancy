@@ -18,10 +18,10 @@ namespace TurnerSoftware.Vibrancy
 		public IReadOnlyList<Swatch> GetSwatches(Image<Rgb24> image)
 		{
 			var definitions = Options.Definitions;
-			var swatches = new List<Swatch>(definitions.Length);
+			var swatches = new Swatch[definitions.Length];
 			for (var i = 0; i < definitions.Length; i++)
 			{
-				swatches.Add(new Swatch(definitions[i]));
+				swatches[i] = new Swatch(definitions[i]);
 			}
 
 			for (var y = 0; y < image.Height; y++)
@@ -101,12 +101,12 @@ namespace TurnerSoftware.Vibrancy
 
 			if (TargetSaturation > -1)
 			{
-				fit += Math.Abs(hsv.S - TargetSaturation) * 1.2f;
+				fit += Math.Abs(hsv.S - TargetSaturation);
 			}
 
 			if (TargetValue > -1)
 			{
-				fit += Math.Abs(hsv.V - TargetValue) * 0.8f;
+				fit += Math.Abs(hsv.V - TargetValue);
 			}
 
 			return fit;
