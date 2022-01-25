@@ -1,13 +1,11 @@
 ﻿using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.ColorSpaces.Conversion;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors.Quantization;
 using SixLabors.ImageSharp.Processing.Processors.Transforms;
 using System.Diagnostics;
 using TurnerSoftware.Vibrancy;
 
-var a = new[]
+var palette = new Palette(new PaletteOptions(new[]
 {
 	SwatchDefinition.DarkVibrant,
 	SwatchDefinition.Vibrant,
@@ -15,30 +13,18 @@ var a = new[]
 	SwatchDefinition.DarkMuted,
 	SwatchDefinition.Muted,
 	SwatchDefinition.LightMuted
-};
-
-
-//var o = new PaletteOptions(a);
-var o = new PaletteOptions
-{
-	Definitions = a
-};
-
-
-var palette = new Palette
-{
-	Options = o
-};
+}));
 
 var stopwatch = new Stopwatch();
-stopwatch.Start();
 foreach (var file in Directory.GetFiles("images").Take(1))
 {
 	Console.Write(file);
 	var inputImage = await Image.LoadAsync<Rgb24>(file);
 	//await inputImage.SaveAsPngAsync($"tmp-{Path.GetFileName(file)}");
 
+	stopwatch.Restart();
 	var swatches = palette.GetSwatches(inputImage);
+	Console.WriteLine($" ({stopwatch.Elapsed.TotalMilliseconds}ms)");
 
 	//var outputImage = new Image<Rgba32>(swatches.Count, swatches.Max(s => s.Count));
 	//outputImage.Mutate(x =>
@@ -60,6 +46,4 @@ foreach (var file in Directory.GetFiles("images").Take(1))
 	//	x.Resize(swatches.Count * 20, 0, new NearestNeighborResampler());
 	//});
 	//await outputImage.SaveAsPngAsync($"output-{Path.GetFileName(file)}");
-	Console.WriteLine($" ({stopwatch.Elapsed.TotalMilliseconds}ms)");
-	stopwatch.Restart();
 }
