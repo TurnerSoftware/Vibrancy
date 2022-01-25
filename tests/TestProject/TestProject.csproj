@@ -8,17 +8,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
+		<ProjectReference Include="..\..\src\TurnerSoftware.Vibrancy\TurnerSoftware.Vibrancy.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="..\..\resources\*.*" LinkBase="resources">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\..\src\TurnerSoftware.Vibrancy\TurnerSoftware.Vibrancy.csproj" />
 	</ItemGroup>
 
 </Project>

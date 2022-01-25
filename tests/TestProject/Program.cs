@@ -1,6 +1,4 @@
-﻿
-
-using SixLabors.ImageSharp;
+﻿using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.ColorSpaces.Conversion;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
@@ -9,7 +7,7 @@ using SixLabors.ImageSharp.Processing.Processors.Transforms;
 using System.Diagnostics;
 using TurnerSoftware.Vibrancy;
 
-var palette = new Palette(new PaletteOptions(new[]
+var a = new[]
 {
 	SwatchDefinition.DarkVibrant,
 	SwatchDefinition.Vibrant,
@@ -17,11 +15,24 @@ var palette = new Palette(new PaletteOptions(new[]
 	SwatchDefinition.DarkMuted,
 	SwatchDefinition.Muted,
 	SwatchDefinition.LightMuted
-}));
+};
+
+
+//var o = new PaletteOptions(a);
+var o = new PaletteOptions
+{
+	Definitions = a
+};
+
+
+var palette = new Palette
+{
+	Options = o
+};
 
 var stopwatch = new Stopwatch();
 stopwatch.Start();
-foreach (var file in Directory.GetFiles("images"))
+foreach (var file in Directory.GetFiles("images").Take(1))
 {
 	Console.Write(file);
 	var inputImage = await Image.LoadAsync<Rgb24>(file);

@@ -44,17 +44,6 @@ namespace TurnerSoftware.Vibrancy
 	/// </summary>
 	/// <param name="Definitions"></param>
 	/// <param name="MinimumColorDelta"></param>
-	/// <param name="MaxColors">
-	/// The input image is run through a quantizer to restrict the number of colours
-	/// Max value allowed is 256.
-	/// Defaults to 64.
-	/// </param>
-	/// <param name="MaxSize">
-	/// Maximum size of the image in an individual dimension before it is processed.
-	/// The higher the value, the higher the quality colours detected and the longer it takes to process.
-	/// When max size is greater than the source image, no resizing is applied.
-	/// Defaults to 100.
-	/// </param>
 	public readonly record struct PaletteOptions(SwatchDefinition[] Definitions, float MinimumColorDelta = 25f);
 
 	public record class Swatch(SwatchDefinition Definition)
@@ -65,12 +54,13 @@ namespace TurnerSoftware.Vibrancy
 
 		public bool TryAddColor(SwatchColor color, float minimumColorDelta)
 		{
-			if (!Definition.FitsGroup(color))
+			var definition = Definition;
+			if (!definition.FitsGroup(color))
 			{
 				return false;
 			}
 
-			var newTargetFitDistance = Definition.DistanceToTargetFit(color);
+			var newTargetFitDistance = definition.DistanceToTargetFit(color);
 			for (var i = 0; i < Colors.Count; i++)
 			{
 				var (existingTargetFitDistance, existingColor) = Colors[i];

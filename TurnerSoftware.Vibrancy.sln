@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.31903.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnerSoftware.Vibrancy", "TurnerSoftware.Vibrancy\TurnerSoftware.Vibrancy.csproj", "{1814545A-B0DE-4F12-85F4-6D79B83182D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnerSoftware.Vibrancy", "src\TurnerSoftware.Vibrancy\TurnerSoftware.Vibrancy.csproj", "{1814545A-B0DE-4F12-85F4-6D79B83182D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{CB278613-4DF8-40CF-A50B-FD54C4648927}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "tests\TestProject\TestProject.csproj", "{CB278613-4DF8-40CF-A50B-FD54C4648927}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{24FFE351-5046-4464-994B-F737474C6808}"
 EndProject
