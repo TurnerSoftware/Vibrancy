@@ -12,7 +12,7 @@ Extract prominent colours from images
 
 Provides basic colour extraction from images into "swatches".
 As configured by a `SwatchDefinition`, each swatch has a min/max/target saturation an value (see [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV)).
-To avoid extracting too many similar colours, a [CIELAB](https://en.wikipedia.org/wiki/CIELAB_color_space)-based perception comparison is performed using a minimum colour threshold (via `PaletteOptions`, default: `25`).
+To avoid extracting too many similar colours, a [CIELAB](https://en.wikipedia.org/wiki/CIELAB_color_space)-based [perception comparison](https://en.wikipedia.org/wiki/Color_difference#CIE76) is performed using a minimum colour threshold (via `PaletteOptions`, default: `25`).
 
 The extraction process is computationally intensive as it processes every individual pixel in an image.
 It is _highly recommended_ resizing large images before running `GetSwatches` and avoiding setting `MinimumColorThreshold` too low.
