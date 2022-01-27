@@ -48,5 +48,5 @@ foreach (var file in Directory.GetFiles("images"))
 	{
 		x.Resize(swatches.Count * 20, 0, new NearestNeighborResampler());
 	});
-	await outputImage.SaveAsPngAsync($"output-{Path.GetFileName(file)}");
+	await outputImage.SaveAsPngAsync($"output-{Path.GetFileNameWithoutExtension(file)}.png");
 }
