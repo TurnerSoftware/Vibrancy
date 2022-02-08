@@ -1,18 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <AssemblyName>TurnerSoftware.Vibrancy</AssemblyName>
-    <Title>TurnerSoftware.Vibrancy</Title>
-    <Description>Extract prominent colours from images</Description>
-    <PackageTags>$(PackageBaseTags)</PackageTags>
-    <Authors>James Turner</Authors>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<AssemblyName>TurnerSoftware.Vibrancy</AssemblyName>
+		<Title>TurnerSoftware.Vibrancy</Title>
+		<Description>Extract prominent colours from images</Description>
+		<PackageTags>$(PackageBaseTags)</PackageTags>
+		<Authors>James Turner</Authors>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="SixLabors.ImageSharp" Version="2.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="SixLabors.ImageSharp" Version="2.0.0" />
+	</ItemGroup>
 
 </Project>
