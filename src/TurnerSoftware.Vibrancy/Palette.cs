@@ -24,18 +24,22 @@ namespace TurnerSoftware.Vibrancy
 				swatches[i] = new Swatch(definitions[i]);
 			}
 
-			for (var y = 0; y < image.Height; y++)
+			var minimumColorDelta = Options.MinimumColorDelta;
+			image.ProcessPixelRows(pixelAccessor =>
 			{
-				var row = image.GetPixelRowSpan(y);
-				for (var x = 0; x < row.Length; x++)
+				for (var y = 0; y < pixelAccessor.Height; y++)
 				{
-					var color = new SwatchColor(row[x]);
-					foreach (var swatch in swatches)
+					var row = pixelAccessor.GetRowSpan(y);
+					for (var x = 0; x < row.Length; x++)
 					{
-						swatch.TryAddColor(color, Options.MinimumColorDelta);
+						var color = new SwatchColor(row[x]);
+						foreach (var swatch in swatches)
+						{
+							swatch.TryAddColor(color, minimumColorDelta);
+						}
 					}
 				}
-			}
+			});
 			return swatches;
 		}
 	}
